@@ -9,7 +9,7 @@ $nam=param("name");
 $age=param("age");
 $con=DBI->connect("DBI:mysql:college","root","admin123");
 $res=$con->prepare("create table if not exists student(name varchar(45), age int)");
-$res->execute() or die("Error is creation");
+$res->execute() or die("Error in creation");
 $res=$con->prepare("insert into student values('$nam','$age')");
 $res->execute();
 $res=$con->prepare("select * from student");
